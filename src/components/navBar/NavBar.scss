@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap');
+
+.navbar {
+
+
+    ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100px;
+        overflow: hidden;
+        background-color: #4E3636;
+
+        button.btn {
+            margin-right: 10vw
+        }
+
+        li {
+            margin: 0 20px;
+
+            &.logo {
+                margin: 0;
+            }
+
+            &.name {
+                flex-grow: 1;
+                margin-left: 15vw;
+                font-size: 35px;
+                letter-spacing: 2px;
+                color: #CD1818;
+                font-family: 'Black Ops One', cursive;
+            }
+
+            &.signup {
+                margin-right: 10vw;
+            }
+
+            &.displayName {
+                color: white;
+                padding: 0;
+                margin-right: 5vw;
+                font-size: 1.3rem;
+                font-family: 'Sedgwick Ave Display', cursive;
+
+            }
+
+            &.icon {
+                margin: 0;
+            }
+
+
+            img {
+                width: 150px;
+                height: 80%;
+                display: block;
+
+
+            }
+
+
+
+        }
+    }
+
+
+}

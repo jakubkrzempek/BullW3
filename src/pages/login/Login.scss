@@ -1,0 +1,32 @@
+.login {
+    .form {
+
+        max-width: 450px;
+        margin: 70px auto;
+        padding: 25px;
+
+        h2 {
+            color: white;
+            text-transform: uppercase;
+        }
+
+        label {
+            display: block;
+            margin: 30px auto;
+            color: white;
+
+        }
+
+        span {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            padding: 10px 8px;
+            font-size: 1.3em;
+            color: #777;
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+
+.intro {
+
+    font-family: 'Black Ops One', cursive;
+
+
+
+    main {
+        position: relative;
+        height: 100vh;
+
+        background-image: url('../../../public/introBg.jpg');
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+
+
+
+        &>* {
+            position: absolute;
+
+        }
+
+        img {
+            top: 30px;
+            left: 60px;
+        }
+
+        .tags {
+            top: 35%;
+            width: 100%;
+        }
+
+        h1 {
+
+            width: 100%;
+            padding: 20px;
+            font-size: 55px;
+            background-color: rgba(0, 0, 0, .5);
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+
+        }
+
+        h3 {
+
+            width: 100%;
+            padding: 20px;
+            font-size: 40px;
+            background-color: rgba(0, 0, 0, .5);
+            color: #CD1818;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+
+        }
+
+        .btn {
+            bottom: 30%;
+            right: 50%;
+            transform: translateX(50%);
+            font-size: 40px;
+            padding: 10px 50px;
+            font-family: roboto condensed, arial, sans-serif;
+            text-transform: uppercase;
+            background-color: transparent;
+            color: white;
+            border: 4px solid white;
+            box-shadow: 10px 5px 5px red;
+            transition: .3s;
+        }
+
+        .btn:hover {
+            background-color: #CD1818;
+            border: 4px solid #CD1818;
+        }
+
+    }
+
+    //     @media (max-width: 1024px) {
+    //         main {
+    //             background-size: cover;
+    //         }
+    //     }
+
+    //     @media (max-width: 812px) and (orientation: landscape) {
+    //         main img {
+    //             width: 25%;
+    //         }
+
+    //         main h1 {
+    //             font-size: 26px;
+    //         }
+
+    //         main button {
+    //             bottom: 30px;
+    //             font-size: 20px;
+    //         }
+    //     }
+
+    //     @media (max-width: 533px) and (orientation: landscape) {
+
+
+    //         main h1 {
+    //             top: 40%;
+    //             font-size: 20px;
+    //         }
+
+    //         main button {
+    //             bottom: 30px;
+    //             font-size: 18px;
+    //         }
+    //     }
+
+    //     @media (max-width: 414px) and (orientation: portrait) {
+    //         main img {
+    //             left: 10%;
+    //             width: 80%;
+
+    //         }
+
+    //         main h1 {
+    //             top: 35%;
+    //             font-size: 30px;
+    //             line-height: 180%;
+    //         }
+
+    //         main button {
+    //             right: 10%;
+    //             width: 80%;
+    //             font-size: 32px;
+    //         }
+    //     }
+
+    //     @media (max-width: 360px) and (orientation: portrait) {
+
+    //         main h1 {
+    //             font-size: 24px;
+    //         }
+
+    //     }
+
+    //     @media (max-width: 320px) and (orientation: portrait) {
+
+    //         main button {
+    //             font-size: 26px;
+    //         }
+    //     }
+
+
+
+}

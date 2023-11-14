@@ -1,0 +1,29 @@
+.sidebar {
+    width: 15%;
+    min-width: 200px;
+    box-shadow: 10px 5px 5px #CD1818;
+    background-color: #4E3636;
+
+    a {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        margin-left: 10px;
+        color: white;
+        text-decoration: none;
+
+
+
+        &.active {
+            background-color: white;
+            border-top-left-radius: 50%;
+            color: #4E3636
+        }
+    }
+
+
+    img {
+        display: block;
+        padding: 20px;
+    }
+}

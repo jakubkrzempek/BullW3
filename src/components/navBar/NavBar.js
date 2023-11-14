@@ -19,9 +19,9 @@ export const NavBar = () => {
     return (
         <nav className='navbar'>
             <ul>
-                <li className='logo'>
+                {/* <li className='logo'>
                     <img src={logo} alt="logo" />
-                </li>
+                </li> */}
                 <li className='name'>
                     <h1> <Link className='btn mainBtn' to="/">BULL W3</Link></h1>
                 </li>

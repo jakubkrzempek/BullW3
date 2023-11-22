@@ -4,7 +4,7 @@ $base-color: #c6538c;
     display: flex;
 
     background-color: #321E1E;
-    height: 100vh;
+    min-height: 100vh;
 
     .main {
         flex-grow: 1;

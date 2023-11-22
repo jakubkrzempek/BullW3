@@ -29,6 +29,23 @@ ul {
   text-transform: uppercase;
 }
 
+.close {
+
+  font-size: 0.8em;
+  color: red;
+  padding: 4px;
+  cursor: pointer;
+  transform: rotateY(45deg);
+  transition: transform 0.5s ease;
+
+  &:hover {
+    color: white;
+    background-color: red;
+    transform: rotateY(0deg);
+
+  }
+}
+
 .mainBtn {
   background: none;
   border: 0;

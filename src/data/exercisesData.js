@@ -192,10 +192,27 @@ const data = [
         difficulty: 3,
         typ: "izolowane",
         advice: [
-            "pochyl się bardzo lekko do przodu",
+            "pochyl się minimalnie do przodu",
             "zegnij delikatnie łokcie i utrzymaj ten kąt przez cały ruch",
             "unikaj rotacji wewnętznej tzn. mały palec nie może być w górze",
             "nie pomagaj sobie reszta ciała",
+        ],
+        photo: "dumbbell-lateral-raise"
+    },
+    {
+        id: "push14",
+        name: "Wyciskanie hantli na skosie dodatnim",
+        eName: "Incline dumbbell bench press",
+        muscles: ["klata", "barki", "triceps"],
+        description: "Ćwiczenie jest złotym środkiem pomiędzy zaangażowaniem barków a klatki piersiowej.",
+        difficulty: 3,
+        typ: "złożone",
+        advice: [
+            "ustaw łopatki w retrakcji i depresji",
+            "utrzymuj stałą kontrolę ruchu hantli",
+            "zrób delikatny mostek w odcinku piersiowym kręgosłupa",
+            "postaw stopy stabilnie na podłożu",
+            "utrzymuj równowagę między obiema rękami",
         ],
         photo: "dumbbell-lateral-raise"
     },
@@ -220,7 +237,7 @@ const data = [
         name: "Wiosłowanie w opadzie",
         eName: "Bent over row",
         muscles: ["najszerszy grzbietu", 'biceps'],
-        description: "Najpopularniejsze ćwiczenie na plecy w płażczyźnie poziomej,może być wykonywane zarówno hantlami jak szatngą, idealne pod rozbudowe szerokości pleców w przypadku prowadzenia łokci blisko ciała. W klasycznej wersji polega na pochyleniu sie równolegle do podłoża oraz przyciagnięciu sztangi do kości biodrowej, minimalizując przy tym zmiane pozycji.",
+        description: "Najpopularniejsze ćwiczenie na plecy w płażczyźnie poziomej,może być wykonywane zarówno hantlami jak szatngą, idealne pod rozbudowe szerokości pleców w przypadku prowadzenia łokci blisko ciała. W klasycznej wersji polega na pochyleniu sie równolegle do podłoża oraz przyciagnięciu sztangi do kości biodrowej, minimalizując przy tym zmiane pozycji. Można rówież wykonań w wyciągu dolnym siedząc",
         difficulty: 3,
         typ: "złożone",
         advice: [
@@ -309,8 +326,25 @@ const data = [
         ],
         photo: "preacher-curl"
     },
+
     {
-        id: "pull7",
+        id: "pull8",
+        name: "Narciarz",
+        eName: "Lat pulldown",
+        muscles: ["najszerszy grzbietu"],
+        description: "Ciekawe ćwiczenia angażujące zarówno najszerzy grzbietu jak i grupe mięśni obłych, nazwa wzieła się od podobieństw ruchu do odpychania się kijami przez narciarzy, dobre ćwiczenie atakujące plecy z niecy innej perspektywy",
+        difficulty: 3,
+        typ: "izolowane",
+        advice: [
+            "kontroluj faze ekscentryczną ruchu",
+            "ćwicz blisko upadku mięśniowego",
+            "możesz wykonać delikatny ruch tułowia aby pracować w pełnym zakresie ruchu",
+            "staraj sieę wykonywać napór na drążek tak jakbyś chciał go połamać"
+        ],
+        photo: "lat-pulldown"
+    },
+    {
+        id: "pull9",
         name: "Uginanie ramion na ławce skosu dodatniego w rozciągniętej pozycji bicepsa",
         eName: "Seated incline dumbbell biceps curl",
         muscles: ["biceps"],
@@ -325,6 +359,24 @@ const data = [
         ],
         photo: "seated-incline-dumbbell-biceps-curl"
     },
+    {
+        id: "pull10",
+        name: "Przyciąganie linki wyciągu dolnego w siadzie ",
+        eName: "Seated Cable Row",
+        muscles: ["najszerszy grzbietu", 'biceps'],
+        description: "Podstawowa alternatywa dla wiosłowania sztangą, która poprzez wykorzystanie wyciągu dolnego zapeni nam stałe napięcie mięśniowe oraz zlikwiduje limiter w postaci prostownika grzbietu",
+        difficulty: 2,
+        typ: "izolowane",
+        advice: [
+            "trzymaj łokcie blisko ciała aby zaangażować najszerzy grzbietu",
+            "trzymaj łokcie szerzej aby zaangażować mięsień czworoboczny",
+            "staraj się nie ruszać tułowiem ",
+            "pamiętaj o odpowiedniej pracy łopatki",
+        ],
+        photo: "seated-cable-row"
+    },
+
+
     {
         id: "legs1",
         name: "Przysiad ze sztanga",
@@ -402,7 +454,7 @@ const data = [
         id: "legs5",
         name: "Wykroki z hantlami",
         eName: "Dumbbell lunge",
-        muscles: ["pośladki", "dwugłowy uda", "czworogłowy uda", ,],
+        muscles: ["pośladki", "dwugłowy uda", "czworogłowy uda"],
         description: "Wykroki są ćwiczeniem które angażuje głównie mięśnie dolnej partii ciała, takie jak pośladki, uda, i mięśnie przywodzące. Poprawiaja stabilizacje i kontrole na ciałem a także wzmacniaja siłe chwytu.",
         difficulty: 3,
         typ: "złożone",
@@ -452,23 +504,7 @@ const data = [
         ],
         photo: "leg-curl"
     },
-    {
-        id: "legs8",
-        name: "Uginanie nóg leżąc	",
-        eName: "Leg curl",
-        muscles: ["dwugłowu uda"],
-        description: "Dobe ćwiczenie uzupełniające , jako  jedno z nielicznych pozwala na wyizolowanie mięśni dwugłowych uda.",
-        difficulty: 1,
-        typ: "izolowane",
-        advice: [
-            "Stosuj jako dodatek nie podstawowe ćwiczenie",
-            "aby zmaksymalizować prace mięśni dwugłowych uda nie napinaj łydek ( nie zadzieraj stóp )",
-            "kontroluj początek i koniec ruchu, unikaj zrywów i szarpania",
 
-
-        ],
-        photo: "leg-curl"
-    },
     {
         id: "legs9",
         name: "Martwy ciąg klasyczny",
@@ -616,6 +652,43 @@ const data = [
         ],
         photo: "standing-calf-raise"
     },
+
+    {
+        id: "abs1",
+        name: "Spięcia brzucha na wyciągu",
+        eName: "Cable crunch",
+        muscles: ["brzuch"],
+        description: "Bardzo dobre ćwiczenie izolujące mięśnie brzucha, nie jest to ćwiczenie łatwe technicznie, ale warto się go nauczyć ponieważ może stanowić duży krok w budowie tzw 'sześciopaka'",
+        difficulty: 4,
+        typ: "izolacja",
+        advice: [
+
+            "nie wykonuj ruchu w biodrze , utrzymuj stałe jego zgięcie",
+            "nie kładź się na ciężarze",
+            "wykonuj ruch jakbyś chciał złączyć klate z miednicą"
+
+
+        ],
+        photo: "cable-crunch"
+    },
+
+    {
+        id: "abs2",
+        name: "Deska",
+        eName: "plank",
+        muscles: ["brzuch"],
+        description: "Dobre ćwiczenie izometryczne, które poprawi stabilizacje naszego ciała oraz siłe mięśni głębokich, zwiększy nasza siłe oraz bezpieczeństwo w wielu innych ćwiczeniach.",
+        difficulty: 2,
+        typ: "izolacja",
+        advice: [
+
+            "nie unoś biodra do góry",
+            "łopatka, głowa oraz pośladki maja znajdować się w jednej lini",
+            "unieś łopatki w góre"
+
+
+        ],
+        photo: "plank"
+    },
 ]
 
-export default data

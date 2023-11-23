@@ -475,7 +475,7 @@ const data = [
 
     },
     {
-        idPlan: "pusPull4-back",
+        idPlan: "pushPull4-back",
         days: "4",
         priority: "back",
 

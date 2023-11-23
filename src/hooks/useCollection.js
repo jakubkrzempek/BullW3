@@ -32,19 +32,25 @@ import { projectFirestore } from "../firebase/config";
 
 export const useCollection = () => {
 
-
+    const [isLoading, setIsLoading] = useState(false);
     const getDocument = async (collection, query1, query2, orderBy) => {
+        setIsLoading(true);
         let ref = projectFirestore.collection(collection);
 
         if (query1 && query2) {
             ref = ref.where(...query1).where(...query2);
         }
+        if (query1 && !query2) {
+            ref = ref.where(...query1);
+        }
 
         if (orderBy) {
             ref = ref.orderBy(...orderBy);
         }
+
         try {
             const doc = await ref.get();
+            setIsLoading(false);
             return doc;
         } catch (e) {
             console.log("cos poszło nie tak przy pobieraniu planu dla ciebie")
@@ -53,5 +59,5 @@ export const useCollection = () => {
 
     };
 
-    return { getDocument };
+    return { getDocument, isLoading };
 };

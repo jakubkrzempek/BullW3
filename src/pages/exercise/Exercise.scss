@@ -1,0 +1,21 @@
+.exercise {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 30px;
+    color: white;
+
+    .content {
+        width: 40%;
+
+        p {
+            margin: 20px 0;
+        }
+    }
+
+    .image {
+        width: 40%;
+        height: 540px;
+        background-color: violet;
+        border: 1px solid black;
+    }
+}

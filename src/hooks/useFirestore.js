@@ -40,12 +40,12 @@ export const useFirestore = (collection) => {
     }
 
     // add a document
-    const addDocument = async (doc) => {
+    const addDocument = async (id, doc) => {
         dispatch({ type: 'IS_PENDING' })
 
         try {
             // const createdAt = timestamp.fromDate(new Date())
-            const addedDocument = await ref.add({ ...doc })
+            const addedDocument = await ref.doc(id).set({ ...doc })
             dispatchIfNotCancelled({ type: 'ADDED_DOCUMENT', payload: addedDocument })
         }
         catch (err) {

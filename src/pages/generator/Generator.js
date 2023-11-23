@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import './Generator.scss'
+//react router
+import { useNavigate } from 'react-router-dom';
 //react-select
 import Select from 'react-select'
 //hooks
 import { useCollection } from '../../hooks/useCollection'
-//components
-import { PlanView } from '../../components/planView/PlanView'
+import { useAuthContext } from '../../hooks/useAuthContext';
+import { projectFirestore } from '../../firebase/config';
 //options
 const days = [
     { value: '1', label: 'jeden' },
@@ -48,8 +50,10 @@ export const Generator = () => {
     const [chooseAdvanced, setChooseAdvanced] = useState('');
     const [choosePriority, setChoosePriority] = useState('');
     const [choosenAdvice, setChoosenAdvice] = useState('default');
-    const [fetchDocuments, setFetchDocuments] = useState();
-    const { getDocument } = useCollection()
+
+    const { getDocument } = useCollection();
+    const navigate = useNavigate();
+    const { user } = useAuthContext();
 
     const submitHandler = async (e) => {
         e.preventDefault();
@@ -58,7 +62,12 @@ export const Generator = () => {
         const result = doc.docs.map((doc) => {
             return doc.data();
         });
-        setFetchDocuments(result);
+
+        console.log(result);
+        await projectFirestore.collection('users').doc(user.uid).set({
+            plan: result[0]
+        })
+        navigate('/planPreview', { state: { plans: result, days: chooseDays } })
 
         //TU SKOŃCZYŁEM
     }

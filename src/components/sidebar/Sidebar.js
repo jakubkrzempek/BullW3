@@ -13,7 +13,7 @@ export const Sidebar = () => {
 
     const handleClick = (data) => {
         data.forEach((doc) => {
-            addDocument(doc);
+            addDocument(doc.idPlan, doc);
         })
 
     }

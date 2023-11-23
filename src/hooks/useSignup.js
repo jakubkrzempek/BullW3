@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { projectAuth } from '../firebase/config';
+import { projectAuth, projectFirestore } from '../firebase/config';
 import { useAuthContext } from './useAuthContext';
 
 export const useSignup = () => {
@@ -19,6 +19,12 @@ export const useSignup = () => {
                 throw new Error('Could not signup');
             }
             await response.user.updateProfile({ displayName: userName });
+            //create user docuemnt in firestore
+            await projectFirestore.collection('users').doc(response.user.uid).set({
+
+                displayName: userName,
+
+            })
             dispatch({ type: 'LOGIN', payload: response.user })
             setIsPending(false);
             setError(null)

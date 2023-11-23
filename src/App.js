@@ -9,11 +9,13 @@ import { Signup } from './pages/signup/Signup.js'
 import { Home } from './pages/home/Home.js'
 import { Generator } from './pages/generator/Generator.js'
 import { Creator } from './pages/creator/Creator.js';
+import { PlanPreview } from './pages/planPreview/PlanPreview.js';
 //components
-import { NavBar } from './components/navBar/NavBar.js'
+import { NavBar } from './components/navBar/NavBar.js';
 import { Sidebar } from './components/sidebar/Sidebar.js';
 //context
 import { useAuthContext } from './hooks/useAuthContext';
+import { Exercise } from './pages/exercise/Exercise.js';
 
 
 
@@ -37,6 +39,8 @@ function App() {
               <Route path='/home' element={!user ? <Navigate to="/login" /> : <Home />} />
               <Route path='/generator' element={!user ? <Navigate to="/login" /> : <Generator />} />
               <Route path='/creator' element={!user ? <Navigate to="/login" /> : <Creator />} />
+              <Route path='/planPreview' element={!user ? <Navigate to="/login" /> : <PlanPreview />} />
+              <Route path='/exercise/:id' element={!user ? <Navigate to="/login" /> : <Exercise />} />
               <Route path='*' element={<Navigate to="/" />} />
             </Routes>
           </div>

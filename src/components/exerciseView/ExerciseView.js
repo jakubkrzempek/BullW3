@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { useCollection } from '../../hooks/useCollection'
 //react-router
 import { Link } from 'react-router-dom';
-export const ExerciseView = ({ exerciseId }) => {
+
+export const ExerciseView = ({ exerciseId, day }) => {
     const { getDocument, isLoading } = useCollection();
     const [exercise, setExercises] = useState('');
 
@@ -24,7 +25,7 @@ export const ExerciseView = ({ exerciseId }) => {
         <>
             {!isLoading && exercise &&
                 <li className='exerciseListItem'>
-                    <Link to={`/exercise/${exercise.id}`}>{exercise.name}</Link>
+                    <Link to={`/exercise/${exercise.id}/${day}`}>{exercise.name}</Link>
 
                 </li>}
             {isLoading && <span>ładowanie...</span>}

@@ -1,21 +1,99 @@
 .exercise {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
+
     padding-top: 30px;
-    color: white;
+    color: black;
+
 
     .content {
         width: 40%;
 
+        padding: 10px;
+        background-color: antiquewhite;
+
+        h2 {
+            margin: 0;
+        }
+
+        p.ang {
+            margin: 4px 0 20px 0;
+            font-size: 0.9em;
+        }
+
+        .description {
+            p {
+                padding-left: 15px;
+                font-size: 1.1em;
+                line-height: 180%;
+            }
+        }
+
         p {
             margin: 20px 0;
         }
+
+
+
+        .muscles {
+            margin-bottom: 20px;
+
+            p {
+                margin: 0;
+            }
+
+            span {
+                border-right: 1px solid black;
+                padding: 0 4px;
+            }
+
+        }
+
+        ul.advice {
+
+            color: black;
+            padding: 15px;
+
+            span {
+                display: block;
+                text-transform: uppercase;
+                border-bottom: double 7px black;
+                text-align: center;
+            }
+
+            li {
+                font-size: 1.2em;
+                padding: 10px;
+                margin: 20px;
+                font-family: 'Saira Extra Condensed', sans-serif;
+            }
+        }
     }
+
+
 
     .image {
         width: 40%;
+
         height: 540px;
         background-color: violet;
         border: 1px solid black;
+    }
+
+    .similarExercises {
+
+        width: 90%;
+        margin-top: 25px;
+        color: white;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+        h2 {
+            width: 100%;
+            padding-bottom: 15px;
+
+        }
     }
 }

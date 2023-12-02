@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed&display=swap');
+// font-family: 'Saira Extra Condensed', sans-serif;
+
 * {
   margin: 0;
   padding: 0;
@@ -60,4 +63,75 @@ ul {
 
 a {
   text-decoration: none;
+}
+
+.difficulty {
+
+  p {
+    width: 200px;
+    height: 30px;
+    margin-top: 3px;
+    border-radius: 0 15px 15px 0;
+    background-color: grey;
+  }
+
+  span {
+    font-size: 0.9em;
+    font-style: italic;
+  }
+
+  .difficulty1 {
+    span {
+      display: block;
+      width: 18%;
+      height: 100%;
+      background-color: yellowgreen;
+      border-right: 2px solid black;
+      border-radius: 0 15px 15px 0;
+    }
+  }
+
+  .difficulty2 {
+    span {
+      display: block;
+      width: 36%;
+      height: 100%;
+      background-color: green;
+      border-right: 2px solid black;
+      border-radius: 0 15px 15px 0;
+    }
+  }
+
+  .difficulty3 {
+    span {
+      display: block;
+      width: 54%;
+      height: 100%;
+      background-color: orange;
+      border-right: 2px solid black;
+      border-radius: 0 15px 15px 0;
+    }
+  }
+
+  .difficulty4 {
+    span {
+      display: block;
+      width: 72%;
+      height: 100%;
+      background-color: orangered;
+      border-right: 2px solid black;
+      border-radius: 0 15px 15px 0;
+    }
+  }
+
+  .difficulty5 {
+    span {
+      display: block;
+      width: 90%;
+      height: 100%;
+      background-color: crimson;
+      border-right: 2px solid black;
+      border-radius: 0 15px 15px 0;
+    }
+  }
 }

@@ -40,7 +40,7 @@ function App() {
               <Route path='/generator' element={!user ? <Navigate to="/login" /> : <Generator />} />
               <Route path='/creator' element={!user ? <Navigate to="/login" /> : <Creator />} />
               <Route path='/planPreview' element={!user ? <Navigate to="/login" /> : <PlanPreview />} />
-              <Route path='/exercise/:id' element={!user ? <Navigate to="/login" /> : <Exercise />} />
+              <Route path='/exercise/:id/:day?' element={!user ? <Navigate to="/login" /> : <Exercise />} />
               <Route path='*' element={<Navigate to="/" />} />
             </Routes>
           </div>

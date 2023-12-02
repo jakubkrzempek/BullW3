@@ -28,7 +28,7 @@ export const PlanPreview = () => {
                         <p>dzień {index}</p>
                         <ul className='exercicesList'>
                             {document.plan[`day${index}`].map(exercise => {
-                                return <ExerciseView key={exercise} exerciseId={exercise} />
+                                return <ExerciseView key={exercise} exerciseId={exercise} day={`day${index}`} />
                             })}
                         </ul>
                     </div>

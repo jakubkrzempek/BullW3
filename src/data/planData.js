@@ -256,7 +256,7 @@ const data = [
             "push13",
             "legs13",
             "pull5",
-            "leg15"
+            "legs15"
 
         ],
 
@@ -291,7 +291,7 @@ const data = [
             "pull3",
             "push13",
             "legs13",
-            "leg15"
+            "legs15"
 
         ],
 
@@ -327,7 +327,7 @@ const data = [
             "push13",
             "legs13",
             "pull5",
-            "leg15"
+            "legs15"
 
         ],
 
@@ -363,7 +363,7 @@ const data = [
             "legs13",
             "push13",
             "pull5",
-            "leg15"
+            "legs15"
 
         ],
 
@@ -397,7 +397,7 @@ const data = [
             "push13",
             "legs13",
             "pull5",
-            "leg15"
+            "legs15"
 
         ],
 

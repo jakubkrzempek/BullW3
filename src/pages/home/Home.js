@@ -1,10 +1,17 @@
 import React from 'react'
 import './Home.scss'
 import { Link } from 'react-router-dom'
+import { useAuthContext } from '../../hooks/useAuthContext'
+
 export const Home = () => {
-    return (
+    const { userData } = useAuthContext();
+    return (userData &&
         <div className='home'>
-            <a href="https://www.flaticon.com/free-icons/planning" title="planning icons">Planning icons created by Freepik - Flaticon</a>
+            <Link to='/planPreview'>
+                <p>
+                    {userData.plan.idPlan}
+                </p>
+            </Link>
         </div>
     )
 }

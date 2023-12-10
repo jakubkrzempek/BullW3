@@ -15,13 +15,14 @@ export const MinExercise = ({ exercise, prevExerciseId, day }) => {
 
     const clickHandler = () => {
         const updatedDay = document.plan[day].map((ex) => {
-            if (ex == prevExerciseId) return exercise.id;
+            if (ex === prevExerciseId) return exercise.id;
             return ex;
         })
 
         updateDocument(user.uid, {
             [`plan.${day}`]: updatedDay
         })
+
 
         navigate('/planPreview');
     }

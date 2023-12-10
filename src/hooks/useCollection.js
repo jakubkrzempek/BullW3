@@ -33,14 +33,17 @@ import { projectFirestore } from "../firebase/config";
 export const useCollection = () => {
 
     const [isLoading, setIsLoading] = useState(false);
-    const getDocument = async (collection, query1, query2, orderBy) => {
+    const getDocument = async (collection, query1, query2, query3, orderBy) => {
         setIsLoading(true);
         let ref = projectFirestore.collection(collection);
 
-        if (query1 && query2) {
+        if (query1 && query2 && query3) {
+            ref = ref.where(...query1).where(...query2).where(...query3);
+        }
+        if (query1 && query2 && !query3) {
             ref = ref.where(...query1).where(...query2);
         }
-        if (query1 && !query2) {
+        if (query1 && !query2 && !query3) {
             ref = ref.where(...query1);
         }
 

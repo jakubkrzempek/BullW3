@@ -1,0 +1,68 @@
+.creator {
+
+    button {
+        margin: 0 auto;
+    }
+
+    .plan {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        align-items: flex-start;
+
+        .day {
+            border: 2px solid white;
+            width: 40%;
+            min-width: 440px;
+            padding: 10px;
+            margin: 50px 0;
+
+            ul {
+
+                li {
+                    margin-bottom: 20px;
+                    display: flex;
+                    align-items: flex-start;
+
+
+                    .delete {
+                        display: block;
+                        width: 20%;
+                        border: 1px solid red;
+                        color: red;
+                        background-color: transparent;
+                        cursor: pointer;
+                        padding: 5px 10px;
+                        margin-left: 10px;
+
+                        &:hover {
+                            background-color: red;
+                            color: white;
+                        }
+                    }
+
+
+
+                }
+            }
+        }
+    }
+
+    .popup {
+        position: absolute;
+        width: 300px;
+        min-height: 300px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 2px solid black;
+        background-color: white;
+        color: black;
+
+        ul {
+            li {
+                cursor: pointer;
+            }
+        }
+    }
+}

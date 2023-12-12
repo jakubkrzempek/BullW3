@@ -11,6 +11,7 @@ export const MinExercise = ({ exercise, prevExerciseId, day }) => {
     const { updateDocument } = useFirestore('users');
     const { user } = useAuthContext();
     const { document, error } = useDocument('users', user.uid)
+
     const navigate = useNavigate();
 
     const clickHandler = () => {
@@ -26,6 +27,9 @@ export const MinExercise = ({ exercise, prevExerciseId, day }) => {
 
         navigate('/planPreview');
     }
+
+
+
     return (
         <div className='minExercise card' onMouseEnter={() => { setIsHover(true) }} onMouseLeave={() => { setIsHover(false) }}>
             {!isHover && <p className='name'>{exercise.name}</p>}

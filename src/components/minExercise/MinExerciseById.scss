@@ -1,15 +1,15 @@
-.minExercise {
+.minExerciseById {
 
     background-color: transparent;
     border: 1px solid greenyellow;
     padding: 10px 20px;
     color: white;
-    width: 35%;
+    width: 100%;
     min-height: 80px;
     position: relative;
     text-align: center;
     transition: 0.3s;
-    margin-bottom: 15px;
+
 
     .name {
         position: absolute;
@@ -22,7 +22,7 @@
 
     .hoverButton {
         display: block;
-        width: 100%;
+        width: 80%;
         height: 100%;
         border-style: none;
         background-color: rgba(0, 128, 0, 0.2);
@@ -34,10 +34,7 @@
     }
 
     .hoverEl {
-        position: absolute;
-        left: 0;
-        bottom: 100%;
-        width: 300px;
+
         background-color: purple;
         color: white;
         border: 1px solid black;

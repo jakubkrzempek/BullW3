@@ -8,6 +8,7 @@ import { useDocument } from '../../hooks/useDocument'
 import { useCollection } from '../../hooks/useCollection'
 //components
 import { MinExercise } from '../../components/minExercise/MinExercise'
+
 export const Exercise = () => {
     const { id, day } = useParams();
     const { document, error } = useDocument('exercises', id);
@@ -38,6 +39,7 @@ export const Exercise = () => {
 
     return document && (
         <div className='exercise'>
+
             <div className='content card'>
                 <h2>{document.name}</h2>
                 <p className='ang'>ang. {document.eName}</p>

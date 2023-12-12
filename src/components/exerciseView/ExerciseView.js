@@ -15,14 +15,18 @@ export const ExerciseView = ({ exerciseId, day, setsReps }) => {
             const result = doc.docs.map((doc) => {
                 return doc.data();
             });
-            const doc2 = await getDocument('setsReps', ["id", "==", setsReps]);
-            const result2 = doc2.docs.map((doc) => {
-                return doc.data();
-            });
+            if (day && setsReps) {
+                const doc2 = await getDocument('setsReps', ["id", "==", setsReps]);
+                const result2 = doc2.docs.map((doc) => {
+                    return doc.data();
+                });
+
+                setReps(result2[0].reps);
+                setSets(result2[0].sets);
+            }
 
             setExercises(result[0]);
-            setReps(result2[0].reps);
-            setSets(result2[0].sets);
+
 
 
         }
@@ -32,11 +36,11 @@ export const ExerciseView = ({ exerciseId, day, setsReps }) => {
 
     return (
         <>
-            {!isLoading && exercise && sets && reps &&
+            {!isLoading && exercise &&
                 <li className='exerciseListItem'>
                     <Link to={`/exercise/${exercise.id}/${day}`}>{exercise.name}</Link>
-                    <p>Ilość seri: <span>{sets}</span></p>
-                    <p>Ilość powtórzeń: <span>{reps}</span>  </p>
+                    {sets && <p>Ilość seri: <span>{sets}</span></p>}
+                    {reps && <p>Ilość powtórzeń: <span>{reps}</span>  </p>}
 
                 </li>}
             {isLoading && <li className='exerciseListItem'>ładowanie...</li>}

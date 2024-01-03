@@ -1,9 +1,9 @@
-$base-color: #c6538c;
+@import 'variables';
 
 .app {
     display: flex;
 
-    background-color: #321E1E;
+    background-color: $main-background;
     min-height: 100vh;
 
     .main {

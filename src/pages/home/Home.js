@@ -7,11 +7,11 @@ export const Home = () => {
     const { userData } = useAuthContext();
     return (userData &&
         <div className='home'>
-            <Link to='/planPreview'>
+            {userData.plan && <Link to='/planPreview'>
                 <p>
-                    {userData.plan.idPlan}
+                    TWOJ PLAN
                 </p>
-            </Link>
+            </Link>}
         </div>
     )
 }

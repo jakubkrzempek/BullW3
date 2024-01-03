@@ -133,7 +133,7 @@ const data = [
         type: 'additional',
     },
     {
-        id: 'AdditionalIntermediateBalanced	',
+        id: 'AdditionalIntermediateBalanced',
         sets: '3',
         reps: '9',
         advanced: 'intermediate',
@@ -141,7 +141,7 @@ const data = [
         type: 'additional',
     },
     {
-        id: 'AdditionalAdvancedBalanced	',
+        id: 'AdditionalAdvancedBalanced',
         sets: '4',
         reps: '8',
         advanced: 'advanced',

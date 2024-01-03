@@ -16,7 +16,7 @@ export const PlanPreview = () => {
     let divArray = null;
     let i = 0;
     if (document) { divArray = Array.from({ length: parseInt(document.plan.days) }, (_, index) => index + 1); }
-
+    console.log(document)
     return (
 
         <div className='planPreview'>

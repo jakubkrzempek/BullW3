@@ -7,13 +7,13 @@ import planIcon from '../../assets/plan-icon.png'
 import generatorIcon from '../../assets/generator-icon.png'
 import creatorIcon from '../../assets/creator-icon.png'
 import { useFirestore } from '../../hooks/useFirestore'
-import data from '../../data/planData.js'
+import data from '../../data/repsData.js'
 export const Sidebar = () => {
-    const { addDocument } = useFirestore('plans');
+    const { addDocument } = useFirestore('setsReps');
 
     const handleClick = (data) => {
         data.forEach((doc) => {
-            addDocument(doc.idPlan, doc);
+            addDocument(doc.id, doc);
         })
 
     }
@@ -22,9 +22,9 @@ export const Sidebar = () => {
             <img src={logo} alt="logo" />
 
 
-            <NavLink to='/home'>
+            <NavLink to='/planPreview'>
                 <img src={planIcon} alt="planIcon" />
-                <p>mój plan</p>
+                <p>Mój plan</p>
 
             </NavLink>
 
@@ -40,7 +40,7 @@ export const Sidebar = () => {
 
             <NavLink to='/creator'>
                 <img src={creatorIcon} alt="creatorIcon" />
-                <p>kreator planu treningowego</p>
+                <p>Kreator planu treningowego</p>
             </NavLink>
 
             <button onClick={() => { handleClick(data) }}>DODAJ DO BAZY</button>

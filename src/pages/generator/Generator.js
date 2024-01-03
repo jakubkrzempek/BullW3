@@ -96,7 +96,7 @@ export const Generator = () => {
                 );
             }
 
-            await projectFirestore.collection('users').doc(user.uid).set({
+            await projectFirestore.collection('users').doc(user.uid).update({
                 plan: result[0]
             })
             navigate('/planPreview', { state: { plans: result, days: chooseDays } })

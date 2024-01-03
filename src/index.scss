@@ -2,11 +2,52 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed&display=swap');
 // font-family: 'Saira Extra Condensed', sans-serif;
+@import "variables";
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+
+  @media screen and (max-width: $xxxl) {
+    font-size: 25px;
+
+  }
+
+  @media screen and (max-width: $xxl) {
+    font-size: 24px;
+
+  }
+
+  @media screen and (max-width: $xl) {
+    font-size: 20px;
+
+  }
+
+  @media screen and (max-width: $l) {
+    font-size: 16px;
+
+  }
+
+  @media screen and (max-width: $m) {
+    font-size: 14px;
+
+  }
+
+  @media screen and (max-width: $s) {
+    font-size: 12px;
+
+  }
+
+  @media screen and (max-width: $xs) {
+    font-size: 10px;
+
+  }
+
 }
 
 body {
@@ -24,7 +65,7 @@ ul {
   border-radius: 4px;
   font-weight: bold;
   cursor: pointer;
-  font-size: 1.5em;
+  font-size: 1.5rem;
   filter: invert(0.30);
   color: white;
   padding: 10px 20px;
@@ -34,7 +75,7 @@ ul {
 
 .close {
 
-  font-size: 0.8em;
+  font-size: 0.8rem;
   color: red;
   padding: 4px;
   cursor: pointer;
@@ -76,7 +117,7 @@ a {
   }
 
   span {
-    font-size: 0.9em;
+    font-size: 0.9rem;
     font-style: italic;
   }
 
@@ -133,5 +174,59 @@ a {
       border-right: 2px solid black;
       border-radius: 0 15px 15px 0;
     }
+  }
+
+
+}
+
+.close-button {
+  $main-color: #ff6347;
+  /* Kolor tła przycisku */
+  $hover-color: #c0392b;
+  /* Kolor tła przycisku po najechaniu myszką */
+
+  background-color: $main-color;
+  border: none;
+  width: 30px;
+  height: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: $hover-color;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    /* Kolor linii animacji */
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &::before {
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%) rotate(45deg);
+    /* Transformacja pierwszej linii "X" */
+  }
+
+  &::after {
+    bottom: 50%;
+    left: 0;
+    transform: translate(0, -50%) rotate(-45deg);
+    /* Transformacja drugiej linii "X" */
+  }
+
+  &:hover::before,
+  &:hover::after {
+    transform: translate(0, -50%) rotate(0deg);
+    /* Reset transformacji po najechaniu myszką */
   }
 }

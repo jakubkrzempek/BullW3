@@ -1,8 +1,10 @@
+@import '../../variables';
+
 .sidebar {
-    width: 150px;
-    min-width: 200px;
+    width: 250px;
+    min-width: 250px;
     box-shadow: 10px 5px 5px #CD1818;
-    background-color: #4E3636;
+    background-color: $sidebarNavbar;
 
     a {
         display: flex;
@@ -17,7 +19,7 @@
         &.active {
             background-color: white;
             border-top-left-radius: 50%;
-            color: #4E3636
+            color: $sidebarNavbar;
         }
     }
 

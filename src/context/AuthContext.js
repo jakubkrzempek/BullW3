@@ -81,6 +81,7 @@ export const AuthContextProvider = ({ children }) => {
 
 
             const ref = projectFirestore.collection('users').doc(user.uid);
+
             const unsubscribe = ref.onSnapshot((snapshot) => {
                 if (snapshot.data()) {
                     dispatch({ type: 'UPDATE_USER_DATA', payload: { ...snapshot.data() } })

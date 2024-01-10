@@ -75,7 +75,7 @@ export const ExerciseView = ({ exerciseId, day, setsReps }) => {
 
 
         if (!isExist) {
-            recordArray.push({ exercise: exercise.id, record: record });
+            recordArray.push({ exercise: exercise.id, name: exercise.name, record: record });
         }
 
         await projectFirestore.collection('users').doc(user.uid).update({
@@ -90,10 +90,15 @@ export const ExerciseView = ({ exerciseId, day, setsReps }) => {
         // ]
     }
     const getCurrentRecord = () => {
-        const record = document.record.find((item) => {
-            return item.exercise === exercise.id;
-        })
-        if (record) return record.record;
+        if (document.hasOwnProperty('record')) {
+            const record = document.record.find((item) => {
+                return item.exercise === exercise.id;
+            })
+            if (record) return record.record;
+            else return "---"
+
+        }
+
         else return "---"
     }
     return (
@@ -102,12 +107,17 @@ export const ExerciseView = ({ exerciseId, day, setsReps }) => {
                 <li className='exerciseListItem'>
                     <Link className='item1' to={`/exercise/${exercise.id}/${day}`}>{exercise.name}</Link>
                     <div className='item2'>
+                        {/* <span onClick={() => setShowChangeRecord(prevState => !prevState)}>Rekord: {getCurrentRecord()}kg</span>
+                        {showChangeRecord && <div className="popUp">
+                            <input type="number" min="1" value={record} onChange={(e) => { setRecord(e.target.value) }} />
+                            <button onClick={() => { submitRecord(); setShowChangeRecord(false) }} >Zmień</button>
+                        </div>}
+ */}
                         <span onClick={() => setShowChangeRecord(prevState => !prevState)}>Rekord: {getCurrentRecord()}kg</span>
                         {showChangeRecord && <div className="popUp">
                             <input type="number" min="1" value={record} onChange={(e) => { setRecord(e.target.value) }} />
                             <button onClick={() => { submitRecord(); setShowChangeRecord(false) }} >Zmień</button>
                         </div>}
-
 
                     </div>
                     {sets && <p className='item3'>Ilość seri: <span>{sets}</span></p>}

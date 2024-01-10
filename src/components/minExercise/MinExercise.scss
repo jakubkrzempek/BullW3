@@ -38,11 +38,12 @@
         position: absolute;
         left: 0;
         bottom: 100%;
-        width: 300px;
+        width: 100%;
         background-color: purple;
         color: white;
         border: 1px solid black;
         opacity: 0.9;
+        padding: 10px;
 
         .nameHover {
             padding: 20px;

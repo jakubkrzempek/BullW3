@@ -10,7 +10,7 @@ export const Intro = () => {
                     <h3>Generator Planów Treningowych!</h3>
                 </div>
                 <Link to="/signup" className='btn'>
-                    Zacznij już dziś
+                    Zacznij już dziś!
                 </Link>
             </main>
         </div>

@@ -1,3 +1,5 @@
+@import '../../variables';
+
 .exercise {
     display: flex;
     flex-wrap: wrap;
@@ -94,6 +96,23 @@
             width: 100%;
             padding-bottom: 15px;
 
+        }
+    }
+
+    @media only screen and (max-width: $m) {
+        .content {
+            width: 80%;
+        }
+
+        .image {
+            margin: 20px 0;
+            width: 80%;
+        }
+
+        .similarExercises {
+            div.minExercise {
+                width: 90%;
+            }
         }
     }
 }

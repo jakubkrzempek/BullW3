@@ -1,3 +1,5 @@
+@import '../../variables';
+
 .generator {
     display: flex;
 
@@ -90,6 +92,36 @@
                 /* Obrót wokół osi X i Y */
                 box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
                 /* Dodanie cienia */
+            }
+        }
+    }
+
+    @media only screen and (max-width: $m) {
+
+        position: relative;
+
+
+
+        form {
+
+            margin: 10px auto;
+
+
+            padding: 5px;
+
+        }
+
+        .info {
+            position: absolute;
+            top: -5%;
+            left: 0;
+            width: 100%;
+
+            background-color: rgba($color: #222, $alpha: 0.95);
+
+
+            .close {
+                font-size: 1.3rem;
             }
         }
     }

@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap');
+//font-family: 'Delicious Handrawn', cursive;
+
+@keyframes slide-in-left {
+    0% {
+        transform: translate(-35%, -100%) rotate(0deg);
+
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(+10deg);
+
+
+    }
+}
+
+@keyframes slide-in-right {
+    0% {
+        transform: translate(+35%, +100%) rotate(0deg);
+
+    }
+
+    100% {
+        transform: translate(0) rotate(-5deg);
+
+    }
+}
+
+$colors: #FF0000, #FF7F00, #FFFF00, #7FFF00, #00FF00, #00FF7F, #00FFFF, #007FFF, #0000FF, #7F00FF;
+;
+
+.record {
+    ul {
+        margin: 0 auto;
+        text-align: center;
+        width: 80%;
+
+        overflow: hidden;
+        //sssss
+
+        overflow: hidden;
+        margin: 50px auto;
+
+
+        padding: 40px;
+
+        border-width: 1px;
+        border-style: solid;
+        border-color: #959595;
+
+        // background-color: #FFFFFF;
+        background: linear-gradient(90deg, rgba(109, 112, 96, 1) 2%, rgba(94, 94, 90, 1) 56%, rgba(154, 138, 55, 1) 100%);
+
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(0, 0, 0, 0.03);
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        //ssssss
+
+        @for $i from 1 through length($colors) {
+            li:nth-child(#{length($colors)}n+#{$i}) {
+                background: nth($colors, $i)
+            }
+        }
+
+        li {
+            width: 40%;
+            min-height: 200px;
+            background-color: white;
+            margin: 20px auto;
+            box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
+
+
+            div.name {
+                font-size: 1.2rem;
+                margin-top: 20px;
+                font-family: 'Delicious Handrawn', cursive;
+
+            }
+
+            div.kg {
+                margin-top: 30px;
+                font-size: 1.5rem;
+                font-weight: bold;
+                font-family: 'Delicious Handrawn', cursive;
+            }
+
+            // &::nth-child(odd) {
+            //     animation: slide-in-right 4s linear;
+            // }
+
+            // &::nth-child(even) {
+            //     animation: slide-in-left 4s linear;
+            // }
+        }
+
+        .slide-in-right {
+            animation: slide-in-right 1s linear forwards;
+
+        }
+
+        .slide-in-left {
+            animation: slide-in-left 1s linear forwards;
+
+        }
+
+    }
+}

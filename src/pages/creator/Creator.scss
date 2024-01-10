@@ -110,7 +110,8 @@
 
         .popup {
             position: absolute;
-            width: 300px;
+
+            width: 80%;
             min-height: 300px;
             top: 50%;
             left: 50%;
@@ -119,6 +120,8 @@
             background-color: transparent;
             color: white;
             padding: 20px 30px;
+            z-index: 4;
+
 
             .close-button {
                 position: absolute;
@@ -139,15 +142,47 @@
             }
 
             ul {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+
                 li {
                     border-bottom: 2px solid $secondary-color;
                     background-color: grey;
-                    border-radius: 10%;
+
                     padding: 10px;
                     margin-bottom: 10px;
                     cursor: pointer;
                 }
             }
         }
+    }
+
+    @media only screen and (max-width: $m) {
+        div.menu {
+            padding-top: 0px;
+            padding-left: 0px;
+
+            div.label {
+                width: 60%;
+                padding: 20px 0;
+                margin: 0 auto;
+            }
+
+            .confirmPlan {
+                padding: 10px;
+                margin-top: 10px;
+            }
+        }
+
+        .plan {
+            .day {
+                min-width: 0;
+                width: 90%;
+
+
+            }
+        }
+
     }
 }

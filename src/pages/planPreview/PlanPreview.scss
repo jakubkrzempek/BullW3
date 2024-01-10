@@ -1,3 +1,5 @@
+@import '../../variables';
+
 @keyframes pulse {
     0% {
         transform: scale(1);
@@ -64,6 +66,24 @@
                     gap: 10px;
                     padding-top: 20px;
                     margin: 10px;
+                    position: relative;
+
+                    &::after {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        bottom: 0;
+                        left: 50%;
+                        /* Ustawienia pozycji */
+                        width: 90%;
+                        /* Szerokość podkreślenia */
+                        transform: translateX(-50%);
+                        /* Ustawienia marginesu, połowa szerokości */
+                        height: 2px;
+                        /* Grubość podkreślenia */
+                        background-color: grey;
+                        /* Kolor podkreślenia */
+                    }
 
                     a.item1 {
                         display: block;
@@ -119,13 +139,20 @@
                         .popUp {
 
                             position: absolute;
-                            top: 90%;
-                            left: 50%;
-                            transform: translateX(-50%);
+                            background-color: black;
+                            top: 50%;
+                            left: 10%;
+                            right: 10%;
+                            transform: translateY(-50%);
+                            // top: 90%;
+                            // left: 50%;
+                            // transform: translateX(-50%);
+                            display: flex;
 
                             input {
                                 font-size: 0.8rem;
                                 width: 50%;
+                                display: block;
                             }
 
                             button {
@@ -170,6 +197,32 @@
                         grid-row: 2/3;
                     }
 
+
+                }
+            }
+
+
+        }
+
+        @media only screen and (max-width: $m) {
+            min-width: 0;
+
+            .day {
+                min-width: 0;
+                width: 80%;
+                margin: 0 auto;
+
+                ul {
+
+
+                    li {
+                        display: flex;
+                        flex-wrap: wrap;
+
+                        &>* {
+                            width: 100%;
+                        }
+                    }
 
                 }
             }

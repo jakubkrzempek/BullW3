@@ -8,8 +8,14 @@
 
 
     main {
-        position: relative;
-        min-height: 100vh;
+        // position: relative;
+
+        // // min-height: 100vh;
+        position: absolute;
+        height: 100vh;
+        width: 100vw;
+        top: 0;
+        left: 0;
 
         background-image: url('../../../public/introBg.jpg');
         background-attachment: fixed;
@@ -37,7 +43,7 @@
 
             width: 100%;
             padding: 20px;
-            font-size: 55px;
+            font-size: 2.5rem;
             background-color: rgba(0, 0, 0, .5);
             color: white;
             text-transform: uppercase;
@@ -50,7 +56,7 @@
 
             width: 100%;
             padding: 20px;
-            font-size: 40px;
+            font-size: 2rem;
             background-color: rgba(0, 0, 0, .5);
             color: $borderEffect;
             text-transform: uppercase;
@@ -63,7 +69,7 @@
             bottom: 30%;
             right: 50%;
             transform: translateX(50%);
-            font-size: 40px;
+            font-size: 2rem;
             padding: 10px 50px;
             font-family: roboto condensed, arial, sans-serif;
             text-transform: uppercase;
@@ -79,6 +85,24 @@
             border: 4px solid $borderEffect;
         }
 
+
+
+    }
+
+    @media only screen and (max-width: $m) {
+        main {
+            background-size: cover;
+
+            .tags {
+                top: 25%;
+
+            }
+
+            .btn {
+                bottom: 15%;
+                text-align: center;
+            }
+        }
     }
 
     //     @media (max-width: 1024px) {

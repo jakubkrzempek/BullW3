@@ -6,10 +6,16 @@ import logo from '../../assets/logo.svg'
 import planIcon from '../../assets/plan-icon.png'
 import generatorIcon from '../../assets/generator-icon.png'
 import creatorIcon from '../../assets/creator-icon.png'
+import recordIcon from '../../assets/record-icon.png'
 import { useFirestore } from '../../hooks/useFirestore'
 import data from '../../data/repsData.js'
-export const Sidebar = () => {
+import { useAuthContext } from '../../hooks/useAuthContext';
+import { useDocument } from '../../hooks/useDocument';
+
+export const Sidebar = ({ isActive }) => {
     const { addDocument } = useFirestore('setsReps');
+    const { user } = useAuthContext();
+    const { document, error } = useDocument('users', user.uid)
 
     const handleClick = (data) => {
         data.forEach((doc) => {
@@ -18,11 +24,11 @@ export const Sidebar = () => {
 
     }
     return (
-        <div className='sidebar'>
-            <img src={logo} alt="logo" />
+        <div className={isActive ? "sidebar" : "sidebar off"}>
+            <img className="logo" src={logo} alt="logo" />
 
 
-            <NavLink to='/planPreview'>
+            <NavLink to='/planPreview' className={document && 'plan' in document ? 'enable' : 'disable'}>
                 <img src={planIcon} alt="planIcon" />
                 <p>Mój plan</p>
 
@@ -43,7 +49,12 @@ export const Sidebar = () => {
                 <p>Kreator planu treningowego</p>
             </NavLink>
 
-            <button onClick={() => { handleClick(data) }}>DODAJ DO BAZY</button>
+            <NavLink to='/record' className={document && 'plan' in document ? 'enable' : 'disable'}>
+                <img src={recordIcon} alt="recordIcon" />
+                <p>Rekordy</p>
+            </NavLink>
+
+            {/* <button onClick={() => { handleClick(data) }}>DODAJ DO BAZY</button> */}
 
         </div>
     )

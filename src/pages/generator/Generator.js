@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './Generator.scss'
+import adviceImage from '../../assets/adviceImage.jpg'
 //react router
 import { useNavigate } from 'react-router-dom';
 //react-select
@@ -143,7 +144,9 @@ export const Generator = () => {
 
 
 
-                {choosenAdvice === "default" && <div className='info'></div>}
+                {choosenAdvice === "default" && <div className='info'>
+                    <img src={adviceImage} alt="adviceImage" />
+                </div>}
 
                 {choosenAdvice === "days" && <div className='info'>
                     <div><p>Podpowiedzi: </p> <span className='close' onClick={() => setChoosenAdvice('default')}>zamknij</span></div>
@@ -166,9 +169,9 @@ export const Generator = () => {
                 {choosenAdvice === "priority" && <div className='info'>
                     <div><p>Podpowiedzi: </p> <span className='close' onClick={() => setChoosenAdvice('default')}>zamknij</span></div>
                     <ul>
-                        <li> Jeżeli któraś z twoich parti mocno nie odstaję od reszty rozważ trening bez priorytetów</li>
-                        <li>Jeżeli rozpoczynasz swoją przygodę wybierz trening bez priorytetów</li>
-                        <li>Pamiętaj że przykładowo priorytet na klatke będzie premiował również partie takie jak triceps czy barki, trening to nie laboratorium nie trzeba wszsytkiego izolować</li>
+                        <li> Jeżeli któraś z twoich parti mocno nie odstaję od reszty rozważ trening bez priorytetów.</li>
+                        <li>Jeżeli rozpoczynasz swoją przygodę wybierz trening bez priorytetów.</li>
+                        <li>Pamiętaj że priorytet na klatke będzie premiował również partie takie jak triceps czy barki, podobnie inne priorytety, trening to nie laboratorium nie trzeba i nie można wszystkiego izolować.</li>
                     </ul>
                 </div>
                 }

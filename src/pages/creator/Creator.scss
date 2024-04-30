@@ -111,7 +111,7 @@
         .popup {
             position: absolute;
 
-            width: 80%;
+            width: 40%;
             min-height: 300px;
             top: 50%;
             left: 50%;
@@ -142,9 +142,13 @@
             }
 
             ul {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: space-between;
+                // display: flex;
+                // flex-wrap: wrap;
+                // justify-content: space-between;
+                max-height: 240px;
+                text-align: center;
+                /* Ustaw maksymalną wysokość wyników, aby dodać przewijanie */
+                overflow-y: auto;
 
                 li {
                     border-bottom: 2px solid $secondary-color;
@@ -162,17 +166,20 @@
         div.menu {
             padding-top: 0px;
             padding-left: 0px;
+            flex-wrap: wrap;
 
             div.label {
-                width: 60%;
+                width: 80%;
                 padding: 20px 0;
                 margin: 0 auto;
             }
 
             .confirmPlan {
-                padding: 10px;
-                margin-top: 10px;
+                padding: 0 10px;
+
             }
+
+            .resetPlan {}
         }
 
         .plan {

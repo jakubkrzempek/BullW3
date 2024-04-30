@@ -201,8 +201,8 @@ const data = [
     },
     {
         id: "push14",
-        name: "Wyciskanie hantli na skosie dodatnim",
-        eName: "Incline dumbbell bench press",
+        name: "Wyciskanie sztangi na skosie dodatnim",
+        eName: "Incline barbell bench press",
         muscles: ["klata", "barki", "triceps"],
         description: "Ćwiczenie jest złotym środkiem pomiędzy zaangażowaniem barków a klatki piersiowej.",
         difficulty: 3,
@@ -212,9 +212,9 @@ const data = [
             "utrzymuj stałą kontrolę ruchu hantli",
             "zrób delikatny mostek w odcinku piersiowym kręgosłupa",
             "postaw stopy stabilnie na podłożu",
-            "utrzymuj równowagę między obiema rękami",
+
         ],
-        photo: "dumbbell-lateral-raise"
+        photo: "incline-barbell-bench-press"
     },
     {
         id: "pull1",
@@ -528,7 +528,7 @@ const data = [
 
 
         ],
-        photo: "leg-curl"
+        photo: "deadlift"
     },
     {
         id: "legs10",
@@ -650,7 +650,7 @@ const data = [
 
 
         ],
-        photo: "standing-calf-raise"
+        photo: "seated-calf-raise"
     },
 
     {

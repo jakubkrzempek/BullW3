@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 //hooks
 import { useCollection } from '../../hooks/useCollection'
 import { useAuthContext } from '../../hooks/useAuthContext'
+import { useDocument } from '../../hooks/useDocument'
 //components
 
 import { MinExerciseById } from '../../components/minExercise/MinExerciseById'
@@ -38,7 +39,7 @@ const setsRepsOption = [
 ]
 export const Creator = () => {
     const [chooseDays, setChooseDays] = useState('');
-    const [exercicesList, setExrciseList] = useState(null);
+    const [exerciseList, setExrciseList] = useState(null);
     const [plan, setPlan] = useState(null)
     const [setsReps, setSetsReps] = useState(null)
     const { getDocument } = useCollection('exercises');
@@ -50,7 +51,8 @@ export const Creator = () => {
     const [inputSearch, setInputSearch] = useState('');
     const [filteredArray, setFilteredArray] = useState([]);
     const [alreadyExist, setAlreadyExist] = useState(false);
-
+    //user have plan
+    const { document } = useDocument('users', user.uid);
     useEffect(() => {
         async function fetchData() {
             const doc = await getDocument('exercises');
@@ -58,10 +60,20 @@ export const Creator = () => {
                 return doc.data();
             });
             setExrciseList(result);
+
+
+
         }
         fetchData();
     }, [])
 
+    useEffect(() => {
+        if (document && 'plan' in document) {
+            setChooseDays(document.plan.days);
+            setPlan(transformObject(document.plan));
+
+        }
+    }, [document])
     let divArray = null;
     if (chooseDays) { divArray = Array.from({ length: parseInt(chooseDays) }, (_, index) => index + 1); }
 
@@ -71,9 +83,9 @@ export const Creator = () => {
 
     }
     const handleSearch = (event) => {
-        if (exercicesList) {
+        if (exerciseList) {
             const searchTerm = event.target.value;
-            const filtered = exercicesList.filter((exercise) => {
+            const filtered = exerciseList.filter((exercise) => {
                 return exercise.name.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1;
             });
             setFilteredArray(filtered.slice(0, 10));
@@ -255,7 +267,36 @@ export const Creator = () => {
         })
         return result;
     }
-    console.log(plan);
+    function transformObject(oldObject) {
+        const newObject = {};
+
+        for (const key in oldObject) {
+            if (key.startsWith('day') && Array.isArray(oldObject[key])) {
+                const dayNumber = key.slice(3);
+                const setsKey = `day${dayNumber}Sets`;
+
+                if (oldObject[setsKey] && Array.isArray(oldObject[setsKey])) {
+                    newObject[key] = oldObject[key].map((exercise, index) => ({
+                        exercise,
+                        setsReps: oldObject[setsKey][index] || 'DefaultSetsRepsValue'
+                    }));
+                }
+            } else if (typeof oldObject[key] === 'object') {
+                newObject[key] = transformObject(oldObject[key]);
+            } else if (!key.endsWith('Sets')) {
+                newObject[key] = oldObject[key];
+            }
+        }
+
+        return newObject;
+    }
+    const resetPlan = () => {
+        setChooseDays("")
+        setPlan(null);
+
+    }
+    // console.log(plan);
+    if (document) { console.log(transformObject(document.plan)) }
     return (
         <div className='creator'>
 
@@ -264,7 +305,7 @@ export const Creator = () => {
                     <span>Dni treningowe w tygodni:</span>
                     <Select className="chooseDays" onChange={(option) => { changeDays(option.value) }} options={days} />
                 </div>
-
+                {chooseDays && plan && !error && <button className='btn resetPlan' onClick={(e) => { resetPlan(e) }}>Reset</button>}
                 {chooseDays && plan && !error && <button className='btn confirmPlan' onClick={(e) => { confirmPlan(e) }}>Gotowe</button>}
             </div>
 

@@ -19,7 +19,7 @@ export const Signup = () => {
             <form onSubmit={handleSubmit} className='form'>
                 <h2>Rejestracja</h2>
                 <label>
-                    <span>email:</span>
+                    <span>Email:</span>
                     <input
                         type="email"
                         onChange={(e) => setEmail(e.target.value)}

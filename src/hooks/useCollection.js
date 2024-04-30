@@ -27,7 +27,7 @@
 //     return { getDocument}
 // }
 
-import { useEffect, useState, useRef } from "react";
+import { useState } from "react";
 import { projectFirestore } from "../firebase/config";
 
 export const useCollection = () => {
@@ -56,7 +56,7 @@ export const useCollection = () => {
             setIsLoading(false);
             return doc;
         } catch (e) {
-            console.log("cos poszło nie tak przy pobieraniu planu dla ciebie")
+            console.log("coś poszło nie tak przy pobieraniu planu dla ciebie")
         }
 
 

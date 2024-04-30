@@ -39,11 +39,25 @@
         left: 0;
         bottom: 100%;
         width: 100%;
-        background-color: purple;
+        background-color: rgb(110, 79, 110);
         color: white;
         border: 1px solid black;
-        opacity: 0.9;
+        // opacity: 0.9;
         padding: 10px;
+
+        .photo {
+            width: 100%;
+            display: flex;
+            background-color: black;
+
+            .imageMin {
+                display: block;
+                width: 50%;
+                margin: 0 auto;
+                background-color: pink;
+                height: 300px;
+            }
+        }
 
         .nameHover {
             padding: 20px;
@@ -54,13 +68,7 @@
             padding: 20px;
         }
 
-        .imageMin {
-            display: block;
-            width: 90%;
-            margin: 0 auto;
-            background-color: pink;
-            height: 200px;
-        }
+
     }
 
 

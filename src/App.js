@@ -34,7 +34,7 @@ function App() {
         <BrowserRouter>
 
           {user && <Sidebar isActive={activeHamburger} />}
-          <div className='main' >
+          <div className='main' style={!user ? { margin: '0' } : null}>
             <NavBar />
             <Routes>
               <Route path='/' element={user ? <Navigate to="/planPreview" /> : <Intro />} />

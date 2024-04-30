@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from 'react'
+import { projectStorage } from '../../firebase/config'
+import wycisk1 from '../../assets/wycisk1.jpg'
+import wycisk2 from '../../assets/wycisk2.jpg'
 //scss
 import './Exercise.scss'
 //react-router
@@ -14,13 +17,32 @@ export const Exercise = () => {
     const { document, error } = useDocument('exercises', id);
     const { getDocument, isLoading } = useCollection();
     const [similar, setSimilar] = useState(null);
-
+    //image
+    const [imageUrl1, setImageUrl1] = useState('');
+    const [imageUrl2, setImageUrl2] = useState('');
 
     useEffect(() => {
         if (document) {
             getSimilarExercises();
+
+            const imageRef1 = projectStorage.ref(`${document.photo}/1.jpg`);
+            imageRef1.getDownloadURL().then(url => {
+                setImageUrl1(url);
+            }).catch(error => {
+                // Obsłuż błąd pobierania adresu URL
+                console.error('Error getting download URL:', error);
+            });
+            const imageRef2 = projectStorage.ref(`${document.photo}/2.jpg`);
+            imageRef2.getDownloadURL().then(url => {
+                setImageUrl2(url);
+            }).catch(error => {
+                // Obsłuż błąd pobierania adresu URL
+                console.error('Error getting download URL:', error);
+            });
         }
     }, [document])
+
+
 
     const getSimilarExercises = async () => {
         const doc = await getDocument('exercises', ['muscles', '==', document.muscles]);
@@ -36,7 +58,7 @@ export const Exercise = () => {
 
     }
 
-
+    console.log(imageUrl1, imageUrl2)
     return document && (
         <div className='exercise'>
 
@@ -64,11 +86,15 @@ export const Exercise = () => {
                     })}
                 </ul>
             </div>
-            <div className='image'>tu bedzie obrazek</div>
+            <div className='image'>
+                <img src={imageUrl1} alt="w1" />
+                <img src={imageUrl2} alt="w1" />
+
+            </div>
             {day && similar && similar.length !== 0 && <div className='similarExercises'>
                 <h2>Propozycje ćwiczeń na które możesz je podmienić:</h2>
                 {similar.map((exercise) => {
-                    return <MinExercise key={exercise.id} exercise={exercise} prevExerciseId={document.id} day={day} />
+                    return <MinExercise key={exercise.id} exercise={exercise} prevExerciseId={document.id} day={day} photo={exercise.photo} />
                 })}
             </div>}
         </div>
